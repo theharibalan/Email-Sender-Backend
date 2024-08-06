@@ -103,6 +103,11 @@ app.post('/pdfup', upload.single('file'), async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send("Executed Successfully");
+});
+
+
 app.post('/send', async (req, res) => {
   const { sub, content } = req.body;
   console.log(req.body);
