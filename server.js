@@ -20,8 +20,8 @@ const mailSender = nodemailer.createTransport({
   port: 587, // SMTP port for TLS
   secure: false, // Use TLS
   auth: {
-    user: 'hr@epicademy.org', // Your Outlook email address
-    pass: 'Epic@2024', // Your Outlook email password
+    user: 'mail', // Your Outlook email address
+    pass: 'pass', // Your Outlook email password
   },
   tls: {
     ciphers: 'SSLv3' // Required for Outlook
@@ -33,7 +33,7 @@ const sendmymails = async (name, sub, content, email) => {
 
   const sendOtpEmail = async (mailBody) => {
     const info = await mailSender.sendMail({
-      from: '"Epicademy" <hr@epicademy.org>',
+      from: '"Mail>',
       to: email,
       subject: sub,
       html: mailBody,
