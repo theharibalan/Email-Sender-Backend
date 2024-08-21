@@ -23,8 +23,8 @@ jobs:
     runs-on: self-hosted 
     steps:
       - name: Pull image from docker hub
-        run: docker pull haribalans/email-sender-backend:latest 
+        run: sudo docker pull haribalans/email-sender-backend:latest 
       - name: Delete old container
-        run: docker rm -f nodejs-app-container  
+        run: sudo docker rm -f nodejs-app-container  
       - name: Run Docker Container
-        run: docker run -d -p 5000:5000 --name nodejs-app-container haribalans/email-sender-backend
+        run: sudo docker run -d -p 5000:5000 --name nodejs-app-container haribalans/email-sender-backend
